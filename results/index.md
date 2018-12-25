@@ -131,7 +131,7 @@ In the last part, we use `non-maximum suppression` on our detections. For each i
 
 ### Results
 
-* Accuracy (step=6) of different regularization parameter `c` in linearSVC. We can observe that the highest accuracy occurs when c=0.1 or 1.0. Therefore, we decide to set c=1.0 as our design.
+* Accuracy (step=6) of different regularization parameter `c` in linearSVC. We can observe that the highest accuracy (0.86) occurs when c=0.1 or 1.0. Therefore, we decide to set c=1.0 as our design.
 
 <table>
 	<tr> 
