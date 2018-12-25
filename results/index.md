@@ -82,9 +82,9 @@ We use  `LinearSVC` from sklearn to train a linear classifier from the positive 
 
 D. run_detector.py
 
-	In this part, we use `non-maximum suppression` on our detections. And for each image, we run the classifier at multiple scales to get more accurate accuracy. And call `non_max_supr_bbox.py` to remove duplicate detections. And we set the proper threshold and scale_step, we can get a perfect result
+In the last part, we use `non-maximum suppression` on our detections. For each image, we run the classifier at multiple scales to obtain a higher accuracy. Besides, we use `non_max_supr_bbox.py` to remove duplicate detections. Finally, we set an appropriate threshold and scale_step to obtain a better result.
 
-	```
+```
 		test_imag_path = os.path.join(test_scn_path, test_images[i]);
         img = color.rgb2grey(imread(test_imag_path));
         
@@ -119,7 +119,7 @@ D. run_detector.py
                         cur_image_ids = np.concatenate([cur_image_ids, [[test_images[i]]]], axis=0)
 
             scale = scale * 0.9 
-	```
+```
 
 
 ## Installation
