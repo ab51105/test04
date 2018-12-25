@@ -139,32 +139,32 @@ In the last part, we use `non-maximum suppression` on our detections. For each i
 		<td> accuracy</td>
     </tr>
 	<tr>
-		<td> C = 0.1</td>
-		<td> 0.451</td>
+		<td> C = 0.001</td>
+		<td> 0.78</td>
 	</tr>
     <tr>
-		<td> C = 1</td>
-		<td> 0.514</td>
+		<td> C = 0.01</td>
+		<td> 0.84</td>
+	</tr>
+    <tr>
+		<td> C = 0.1</td>
+		<td> 0.86</td>
+	</tr>
+    <tr>
+		<td> C = 1.0</td>
+		<td> 0.86</td>
 	</tr>
     <tr>
 		<td> C = 10</td>
-		<td> 0.64</td>
+		<td> 0.83</td>
 	</tr>
     <tr>
 		<td> C = 100</td>
-		<td> 0.718</td>
+		<td> 0.84</td>
 	</tr>
     <tr>
-		<td> C = 200</td>
-		<td> 0.72</td>
-	</tr>
-    <tr>
-		<td> C = 300</td>
-		<td> 0.716</td>
-	</tr>
-    <tr>
-		<td> C = 500</td>
-		<td> 0.709</td>
+		<td> C = 1000</td>
+		<td> 0.85</td>
 	</tr>
 
 </table>
