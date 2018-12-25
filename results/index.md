@@ -131,6 +131,46 @@ In the last part, we use `non-maximum suppression` on our detections. For each i
 
 ### Results
 
+* Accuracy of different regularization parameter `c` in linearSVC
+
+<table>
+	<tr> 
+		<td></td>
+		<td> accuracy</td>
+    </tr>
+	<tr>
+		<td> C = 0.1</td>
+		<td> 0.451</td>
+	</tr>
+    <tr>
+		<td> C = 1</td>
+		<td> 0.514</td>
+	</tr>
+    <tr>
+		<td> C = 10</td>
+		<td> 0.64</td>
+	</tr>
+    <tr>
+		<td> C = 100</td>
+		<td> 0.718</td>
+	</tr>
+    <tr>
+		<td> C = 200</td>
+		<td> 0.72</td>
+	</tr>
+    <tr>
+		<td> C = 300</td>
+		<td> 0.716</td>
+	</tr>
+    <tr>
+		<td> C = 500</td>
+		<td> 0.709</td>
+	</tr>
+
+</table>
+
+* Face detection results
+
 step = 6 (accuracy = 0.86)
 <table border=1>
 <tr>
