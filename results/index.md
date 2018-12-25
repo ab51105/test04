@@ -75,7 +75,7 @@ We use  `LinearSVC` from sklearn to train a linear classifier from the positive 
 
 ```
 	def svm_classify(x, y):
-		clf = svm.LinearSVC(random_state=0,c=10);
+		clf = svm.LinearSVC(random_state=0,c=1.0);
     	clf.fit(x,y);
 		return clf
 ```
@@ -131,7 +131,7 @@ In the last part, we use `non-maximum suppression` on our detections. For each i
 
 ### Results
 
-* Accuracy (step=6) of different regularization parameter `c` in linearSVC
+* Accuracy (step=6) of different regularization parameter `c` in linearSVC. We can observe that the highest accuracy occurs when c=0.1 or 1.0. Therefore, we decide to set c=1.0 as our design.
 
 <table>
 	<tr> 
