@@ -40,9 +40,9 @@ Here, we need to use Histogram of Gradients (HoG) to obtain features of images w
 
 B. get_random_negative_features.py
 
-	In this function, we have to get non-face image's features. And the total number of samples is not equal the total images numbers. So I randomly choose the image first and then randomly crop the image patch out and use Hog to get its features. After reshape it, I concatenate the flatten features for each image along row dimension. Finally, we get our feature_neg with it's size num_samples*D 
+In this part, we need to extract non-face images' features. Because total number of samples are not equal total images numbers, we randomly choose the image first and then randomly crop the image patch out and use Hog to get its features. After reshaping, we concatenate the flatten features for each image along row dimension. At last, we obtain feature_neg with size num_samples*D.
 
-	```
+```
 	def get_random_negative_features(non_face_scn_path, feature_params, num_samples):
 		# get image filename
 		image_paths = glob(os.path.join(non_face_scn_path, '*.jpg'));
@@ -67,7 +67,7 @@ B. get_random_negative_features.py
 			hog_feats = hog(patch,hog_cell_size);
 			features_neg[i,:] = np.reshape(hog_feats,(1,D));
 		return features_neg, neg_examples
-	```
+```
 
 C. svm_classify.py
 
