@@ -17,8 +17,9 @@ In this project, we need to implement four functions for face detecting. That is
 A. get_positive_features.py 
 	
 	Here, we need to use Histogram of Gradients (HoG) to obtain features of images with faces. And flatten it to size 1 * D for each image. Then we concatenate the flatten features for each image along row dimension. At last, we obtain feature_pos with size N * D ,where N is the numbers of input image.
+	
 
-	```
+```
 	def get_positive_features(train_path_pos, feature_params):
 		# get image filename
 		image_paths = glob(os.path.join(train_path_pos, '*.jpg'));
@@ -35,7 +36,7 @@ A. get_positive_features.py
 			hog_result = hog(imread(img_name), hog_cell_size);
 			features_pos[img_idx,:] = np.reshape(hog_result,(1,D));
 		return features_pos 
-	```
+```
 
 B. get_random_negative_features.py
 
