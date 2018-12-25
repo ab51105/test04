@@ -1,24 +1,22 @@
-# 黃世耀 <span style="color:red">(106061561)</span>
+# 廖景輝 <span style="color:red">(1071082S)</span>
 
-# Project 4 / Face Detection with a Sliding Window
+# Project 4:Face Detection with a Sliding Window
 
 ## Overview
-The project is related to 
+This project is related to:
 
-> Face Detection
+> Face Detection by sliding window classification
 
-> Hog features
-
-> non-maximum suppression
+> SIFT-like Histogram of Gradients (HoG) representation
 
 
 ## Implementation
 
-In this homework, we will try to implement four functions below in order to using sliding window to detect face.
+In this project, we need to implement four functions for face detecting. That is, get_positive_features.py, get_random_negative_features.py,svm_classify.py and run_detector.py. We will show details as below.
 
-1. get_positive_features.py 
+A. get_positive_features.py 
 	
-	In this part, we aims to use "HoG" method to get the features of images with faces. And then flatten it to size 1 * D for each image. And we concatenate the flatten features for each image along row dimension. Finally, we get our feature_pos with it's size N * D (where N is the numbers of input image)
+	Here, we need to use Histogram of Gradients (HoG) to obtain features of images with faces. And flatten it to size 1 * D for each image. Then we concatenate the flatten features for each image along row dimension. At last, we obtain feature_pos with size N * D ,where N is the numbers of input image.
 
 	```
 	def get_positive_features(train_path_pos, feature_params):
@@ -39,7 +37,7 @@ In this homework, we will try to implement four functions below in order to usin
 		return features_pos 
 	```
 
-2. get_random_negative_features.py
+B. get_random_negative_features.py
 
 	In this function, we have to get non-face image's features. And the total number of samples is not equal the total images numbers. So I randomly choose the image first and then randomly crop the image patch out and use Hog to get its features. After reshape it, I concatenate the flatten features for each image along row dimension. Finally, we get our feature_neg with it's size num_samples*D 
 
@@ -70,7 +68,7 @@ In this homework, we will try to implement four functions below in order to usin
 		return features_neg, neg_examples
 	```
 
-3. svm_classify.py
+C. svm_classify.py
 
 	There, we use `LinearSVC` to train a linear classifier from the positive and negative examples with the setting of `random_state=0`.
 
@@ -81,7 +79,7 @@ In this homework, we will try to implement four functions below in order to usin
 		return clf
 	```
 
-4. run_detector.py
+D. run_detector.py
 
 	In this part, we use `non-maximum suppression` on our detections. And for each image, we run the classifier at multiple scales to get more accurate accuracy. And call `non_max_supr_bbox.py` to remove duplicate detections. And we set the proper threshold and scale_step, we can get a perfect result
 
