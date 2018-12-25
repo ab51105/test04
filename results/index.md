@@ -20,7 +20,7 @@ Here, we need to use Histogram of Gradients (HoG) to obtain features of images w
 	
 
 ```
-	def get_positive_features(train_path_pos, feature_params):
+		def get_positive_features(train_path_pos, feature_params):
 		# get image filename
 		image_paths = glob(os.path.join(train_path_pos, '*.jpg'));
 		
@@ -43,7 +43,7 @@ B. get_random_negative_features.py
 In this part, we need to extract non-face images' features. Because total number of samples are not equal total images numbers, we randomly choose the image first and then randomly crop the image patch out and use Hog to get its features. After reshaping, we concatenate the flatten features for each image along row dimension. At last, we obtain feature_neg with size num_samples*D.
 
 ```
-	def get_random_negative_features(non_face_scn_path, feature_params, num_samples):
+		def get_random_negative_features(non_face_scn_path, feature_params, num_samples):
 		# get image filename
 		image_paths = glob(os.path.join(non_face_scn_path, '*.jpg'));
 		
@@ -85,7 +85,7 @@ D. run_detector.py
 In the last part, we use `non-maximum suppression` on our detections. For each image, we run the classifier at multiple scales to obtain a higher accuracy. Besides, we use `non_max_supr_bbox.py` to remove duplicate detections. Finally, we set an appropriate threshold and scale_step to obtain a better result.
 
 ```
-		test_imag_path = os.path.join(test_scn_path, test_images[i]);
+	test_imag_path = os.path.join(test_scn_path, test_images[i]);
         img = color.rgb2grey(imread(test_imag_path));
         
         cur_bboxes = np.zeros([0, 4]);
@@ -126,7 +126,7 @@ In the last part, we use `non-maximum suppression` on our detections. For each i
 
 * Other required packages
 
-	* tqdm
+	* In this project, we only need to install an additional function - tqdm.
 
 
 ### Results
