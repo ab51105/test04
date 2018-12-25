@@ -131,7 +131,7 @@ In the last part, we use `non-maximum suppression` on our detections. For each i
 
 ### Results
 
-* Accuracy of different regularization parameter `c` in linearSVC
+* Accuracy (step=6) of different regularization parameter `c` in linearSVC
 
 <table>
 	<tr> 
