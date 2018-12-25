@@ -71,14 +71,14 @@ In this part, we need to extract non-face images' features. Because total number
 
 C. svm_classify.py
 
-	There, we use `LinearSVC` to train a linear classifier from the positive and negative examples with the setting of `random_state=0`.
+We use  `LinearSVC` from sklearn to train a linear classifier from the positive and negative examples with the setting of the regularization parameter `c` and `random_state=0`. We will compare different c and show their accuracy as below.
 
-	```
+```
 	def svm_classify(x, y):
-		clf = svm.LinearSVC(random_state=0);
+		clf = svm.LinearSVC(random_state=0,c=10);
     	clf.fit(x,y);
 		return clf
-	```
+```
 
 D. run_detector.py
 
